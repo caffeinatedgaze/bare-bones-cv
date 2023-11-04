@@ -1,0 +1,135 @@
+contacts:
+  name: John Doe
+  title: Data Scientist
+  email: john.doe@email.com 
+  phone: "+123 456 7890"
+  address: "123 Imaginary Street, Imaginary City, Imaginary Country"
+  linkedin: "https://www.linkedin.com/in/mikhail-liamets/"
+  nationality: Imaginarian
+  github: "https://github.com/caffeinatedgaze/"
+
+skills:
+  - name: Programming Languages
+    items:
+      - Python
+      - Java
+      - C++
+      - JavaScript
+  - name: Software Development
+    items:
+      - Agile
+      - Scrum
+      - Design Patterns
+      - Git
+  - name: Data Analysis
+    items:
+      - Data Visualization
+      - Machine Learning
+      - Statistics
+      - SQL
+  - name: Cloud Computing
+    items:
+      - AWS
+      - Azure
+      - Google Cloud
+  - name: Database Management
+    items:
+      - MySQL
+      - PostgreSQL
+      - MongoDB
+  - name: Web Development
+    items:
+      - HTML/CSS
+      - React
+      - Node.js
+      - Express.js
+      - Django
+
+jobs:
+  - position: Data Analyst
+    company:
+      name: Google 
+      link: https://imaginaryanalytics.com/
+    description:
+      - Analyzed data to provide insights for clients.
+      - Developed data visualizations and reports for client presentations.
+      - Collaborated with cross-functional teams, including data scientists and engineers, to drive data-driven decision-making.
+      - Worked in close collaboration with interdisciplinary teams on a range of development initiatives.
+      - Conceived and executed software systems to tackle unique client challenges.
+      - Designed and implemented software solutions that effectively addressed intricate business challenges.
+
+    from: "2022 Jan."
+    to: "2022 Dec."
+    tags:
+      - Data Analysis
+      - Data Visualization
+      - Report Generation
+  - position: Software Engineer
+    company:
+      name: Netflix 
+      link: https://codewizards.com/
+    description:
+      - Designed and developed software solutions for clients.
+      - Implemented best coding practices and maintained code quality.
+      - Collaborated with a global development team on multiple projects.
+      - Engineered and delivered customized software solutions for clients' specific needs.
+      - Implemented coding best practices to uphold code quality and reliability.
+      - Engaged in cross-border cooperation with a global development team, contributing to multiple projects.
+
+    from: "2021 Mar."
+    to: "2021 Dec."
+    tags:
+      - Software Development
+      - Coding
+      - Collaboration
+  - position: Machine Learning Engineer
+    company:
+      name: AI Innovators
+      link: "https://aiinnovators.com/"
+    description: 
+      - Built and trained machine learning models for various applications.
+      - Deployed AI solutions in real-world scenarios.
+      - Created custom software solutions tailored to meet client requirements.
+      - Enforced coding best practices to ensure high code quality and maintainability.
+      - Worked closely with a diverse, multinational development team on various concurrent projects.
+      - Crafted software applications with a strong focus on client needs and user experience.
+      - Collaborated with an international development workforce, fostering innovation and teamwork.
+      - Engineered software solutions that addressed complex business problems effectively.
+    from: "2020 Jun."
+    to: "2020 Dec."
+    tags:
+      - Machine Learning
+      - AI Solutions
+      - Research
+
+education:
+  - university:
+      name: Constructor University Bremen
+      link: "https://constructor.university/"
+    degree: "M.Sc."
+    major:
+      Computer Science
+    track:
+      Artificial Intelligence
+    from: "2018"
+    to: "2020"
+  - university:
+      name: Innopolis University 
+      link: "https://innopolis.university/en/"
+    degree: "B.Sc."
+    major:
+      Data Science
+    track: Technical Leadership
+    from: "2015"
+    to: "2018"
+
+hackathons:
+  - hackathon:
+      name: Tech Innovators Hackathon
+      link: "https://techinnovatorshackathon.com/"
+    certificate_link: "https://techinnovatorshackathon.com/certificates/johndoe"
+    description: >
+      Developed an innovative data analysis tool that improved data processing and insights generation for businesses.
+    year: 2023
+    from: "Feb. 1"
+    to: "Feb. 7"

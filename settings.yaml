@@ -1,0 +1,15 @@
+font:
+  size:
+    heading_huge: 19pt
+    heading_large: 16pt
+    heading: 13pt
+    description: 8pt
+    tags: 8pt
+    education_description: 8pt
+    contacts: 8pt
+  general: "Helvetica Neue"
+  minor_highlight: "Helvetica Neue"
+
+paragraph:
+  # Distance between lines
+  leading: 4pt
