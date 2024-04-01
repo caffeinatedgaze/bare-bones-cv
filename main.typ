@@ -22,8 +22,8 @@
       
       Email: #link("mailto:" + configuration.contacts.email) \
       Phone: #link("tel:" + configuration.contacts.phone) \
-      LinkedIn: #link(configuration.contacts.linkedin)[mikhail-liamets] \
-      GitHub: #link(configuration.contacts.github)[caffeintazedgaze] \
+      LinkedIn: #link(configuration.contacts.linkedin.url)[#configuration.contacts.linkedin.displayText] \
+      GitHub: #link(configuration.contacts.github.url)[#configuration.contacts.github.displayText] \
       
       #configuration.contacts.address
     ]

@@ -4,9 +4,13 @@ contacts:
   email: john.doe@email.com 
   phone: "+123 456 7890"
   address: "123 Imaginary Street, Imaginary City, Imaginary Country"
-  linkedin: "https://www.linkedin.com/in/mikhail-liamets/"
   nationality: Imaginarian
-  github: "https://github.com/caffeinatedgaze/"
+  linkedin:
+    url: https://www.linkedin.com/in/mikhail-liamets/
+    displayText: mikhail-liamets
+  github:
+    url: https://github.com/caffeinatedgaze/
+    displayText: caffeinatedgaze
 
 skills:
   - name: Programming Languages
