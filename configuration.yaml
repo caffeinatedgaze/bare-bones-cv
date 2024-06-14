@@ -1,7 +1,7 @@
 contacts:
   name: John Doe
   title: Data Scientist
-  email: john.doe@email.com 
+  email: john.doe@email.com
   phone: "+123 456 7890"
   address: "123 Imaginary Street, Imaginary City, Imaginary Country"
   nationality: Imaginarian
@@ -52,7 +52,7 @@ skills:
 jobs:
   - position: Data Analyst
     company:
-      name: Google 
+      name: Google
       link: https://imaginaryanalytics.com/
     description:
       - Analyzed data to provide insights for clients.
@@ -70,7 +70,7 @@ jobs:
       - Report Generation
   - position: Software Engineer
     company:
-      name: Netflix 
+      name: Netflix
       link: https://codewizards.com/
     description:
       - Designed and developed software solutions for clients.
@@ -90,7 +90,7 @@ jobs:
     company:
       name: AI Innovators
       link: "https://aiinnovators.com/"
-    description: 
+    description:
       - Built and trained machine learning models for various applications.
       - Deployed AI solutions in real-world scenarios.
       - Created custom software solutions tailored to meet client requirements.
@@ -107,7 +107,7 @@ jobs:
       - Research
 
 education:
-  - university:
+  - place:
       name: Constructor University Bremen
       link: "https://constructor.university/"
     degree: "M.Sc."
@@ -117,8 +117,8 @@ education:
       Artificial Intelligence
     from: "2018"
     to: "2020"
-  - university:
-      name: Innopolis University 
+  - place:
+      name: Innopolis University
       link: "https://innopolis.university/en/"
     degree: "B.Sc."
     major:
