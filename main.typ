@@ -3,6 +3,14 @@
 
 #show link: set text(blue)
 
+#set page(
+  paper: "a4",
+  margin: (
+    top: 1.5cm,
+    bottom: 1cm,
+  )
+)
+
 #show heading: h => [
   #set text(
     size: eval(settings.font.size.heading_large),
@@ -19,12 +27,12 @@
         size: eval(settings.font.size.contacts),
         font: settings.font.minor_highlight,
       )
-      
+
       Email: #link("mailto:" + configuration.contacts.email) \
       Phone: #link("tel:" + configuration.contacts.phone) \
       LinkedIn: #link(configuration.contacts.linkedin.url)[#configuration.contacts.linkedin.displayText] \
       GitHub: #link(configuration.contacts.github.url)[#configuration.contacts.github.displayText] \
-      
+
       #configuration.contacts.address
     ]
     #line(length: 100%)
@@ -37,9 +45,9 @@
         eval(settings.font.size.education_description),
         font: settings.font.minor_highlight,
     )
-    An experienced *software engineer* with a confident grasp of *infrastructure*, *system design*, and *DevOps*, now seeking opportunities to excel in the realms of solution architecture.
+    An experienced *software engineer* with a confident grasp of *infrastructure* and *system design*, now seeking opportunities to excel in the realms of solution architecture.
 
-    Open to roles ranging from *software engineering* to *DevOps/SRE*.
+    Open to roles ranging from *software engineering* to *infrastructure*.
   ]
 
   = Education
@@ -51,16 +59,37 @@
             size: eval(settings.font.size.heading),
             font: settings.font.general
           )
-            #place.from – #place.to \
-            #link(place.university.link)[#place.university.name]
+            #{
+              if "to" in place and "from" in place [
+                #place.from
+                – #place.to \
+              ] else if "arbitrary_interval" in place [
+                #place.arbitrary_interval
+              ]
+            }
+            #link(place.place.link)[#place.place.name]
         ]
         #par[
           #set text(
             eval(settings.font.size.education_description),
             font: settings.font.minor_highlight,
           )
-          #place.degree #place.major \
-          #place.track track
+          #{
+            let description_items = ()
+            if "degree" in place and "major" in place [
+              #description_items.push(place.degree + " " + place.major)
+            ]
+            if "track" in place [
+              #description_items.push(place.track + " " + "track")
+            ]
+            if "note" in place [
+              #description_items.push(place.note)
+            ]
+            if "location" in place [
+              #description_items.push(place.location)
+            ]
+            description_items.join("\n")
+          }
         ]
     ]
   }
@@ -77,7 +106,7 @@
           // size: eval(settings.font.size.tags),
           font: settings.font.minor_highlight,
         )
-        *#skill.name* 
+        *#skill.name*
         #linebreak()
         #skill.items.join(" • ")
       ]
@@ -108,7 +137,7 @@
       size: eval(settings.font.size.heading),
       font: settings.font.minor_highlight,
       top-edge: 0pt
-    )  
+    )
     #configuration.contacts.title
   ]
 
@@ -121,10 +150,10 @@
           size: eval(settings.font.size.heading),
           font: settings.font.general
         )
-          #job.from – #job.to \
-          
           *#job.position*
-          #link(job.company.link)[\@  #job.company.name]    
+          #link(job.company.link)[\@  #job.company.name] \
+          #job.from – #job.to
+
       ]
       #par(
         justify: false,
