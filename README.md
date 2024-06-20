@@ -4,7 +4,7 @@
 
 To generate `main.pdf` and watch for live changes, run
 
-`typst watch main.typ`
+`make watch`
 
 ```bash
 ________ Main content
