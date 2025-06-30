@@ -20,35 +20,30 @@
 ]
 
 #let sidebarSection = {[
-  #par(justify: true)[
+  #set par(justify: true)
 
-    #par[
-      #set text(
-        size: eval(settings.font.size.contacts),
-        font: settings.font.minor_highlight,
-      )
-
-      Email: #link("mailto:" + configuration.contacts.email) \
-      Phone: #link("tel:" + configuration.contacts.phone) \
-      LinkedIn: #link(configuration.contacts.linkedin.url)[#configuration.contacts.linkedin.displayText] \
-      GitHub: #link(configuration.contacts.github.url)[#configuration.contacts.github.displayText] \
-
-      #configuration.contacts.address
-    ]
-    #line(length: 100%)
-  ]
+  #set text(
+    size: eval(settings.font.size.contacts),
+    font: settings.font.minor_highlight,
+  )
+      
+  Email: #link("mailto:" + configuration.contacts.email) \
+  Phone: #link("tel:" + configuration.contacts.phone) \
+  LinkedIn: #link(configuration.contacts.linkedin.url)[#configuration.contacts.linkedin.displayText] \
+  GitHub: #link(configuration.contacts.github.url)[#configuration.contacts.github.displayText] \
+  
+  #configuration.contacts.address
+  #line(length: 100%)
 
   = Summary
 
-  #par[
-    #set text(
-        eval(settings.font.size.education_description),
-        font: settings.font.minor_highlight,
-    )
-    An experienced *software engineer* with a confident grasp of *infrastructure* and *system design*, now seeking opportunities to excel in the realms of solution architecture.
+  #set text(
+      eval(settings.font.size.education_description),
+      font: settings.font.minor_highlight,
+  )
+  An experienced *software engineer* with a confident grasp of *infrastructure* and *system design*, now seeking opportunities to excel in the realms of solution architecture.
 
-    Open to roles ranging from *software engineering* to *infrastructure*.
-  ]
+  Open to roles ranging from *software engineering* to *infrastructure*.
 
   = Education
 
@@ -115,15 +110,6 @@
 ]}
 
 #let mainSection = {[
-
-  // #par[
-  //   #set align(center)
-  //   #figure(
-  //     image("images/Kodak 20 Zanvoort Lumi.jpg", width: 6em),
-  //     placement: top,
-  //   )
-  // ]
-
   #par[
     #set text(
       size: eval(settings.font.size.heading_huge),
@@ -145,32 +131,23 @@
 
   #{
     for job in configuration.jobs [
-      #par(justify: false)[
+      #set par(justify: false)
         #set text(
           size: eval(settings.font.size.heading),
           font: settings.font.general
         )
-          *#job.position*
-          #link(job.company.link)[\@  #job.company.name] \
-          #job.from – #job.to
+        *#job.position*
+        #link(job.company.link)[\@  #job.company.name] \
+        #job.from – #job.to
 
-      ]
+      #set text(
+        size: eval(settings.font.size.description),
+        font: settings.font.general
+      )
+      #list(..job.description)
+      
       #par(
         justify: false,
-        leading: eval(settings.paragraph.leading)
-      )[
-        #set text(
-          size: eval(settings.font.size.description),
-          font: settings.font.general
-        )
-        #{
-          for point in job.description [
-            #h(0.5cm) • #point \
-          ]
-        }
-      ]
-      #par(
-        justify: true,
         leading: eval(settings.paragraph.leading),
       )[
         #set text(
@@ -185,34 +162,30 @@
     ]
   }
 
-
-
   = Hackathons
 
   #{
     for hack in configuration.hackathons [
-      #par(
+      #set par(
         justify: true,
         leading: eval(settings.paragraph.leading)
-      )[
-        #par[
-          #set text(
-            size: eval(settings.font.size.heading),
-            font: settings.font.general
-          )
-          - #hack.year #hack.from – #hack.to \
-            #link(hack.hackathon.link)[#hack.hackathon.name] – #link(hack.certificate_link)[Credential]
-        ]
-        #par[
-          #set text(
-            size: eval(settings.font.size.description),
-            font: settings.font.general
-          )
-          #hack.description
-        ]
-      ]
+      )
+
+      #set text(
+        size: eval(settings.font.size.description),
+        font: settings.font.general
+      )
+      - #hack.year #hack.from – #hack.to \
+        #link(hack.hackathon.link)[#hack.hackathon.name] – #link(hack.certificate_link)[Credential]
+        
+        #set text(
+          size: eval(settings.font.size.description),
+          font: settings.font.general
+        )
+        #hack.description
     ]
   }
+
 ]}
 
 #{
