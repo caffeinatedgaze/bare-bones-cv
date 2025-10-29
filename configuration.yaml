@@ -1,3 +1,7 @@
+summary: >
+  Backend Engineer with a strong foundation in distributed systems.
+  Adept at delivering consumer-facing features with strong emphasis on scalability.
+
 contacts:
   name: John Doe
   title: Data Scientist
@@ -111,24 +115,32 @@ education:
       name: Constructor University Bremen
       link: "https://constructor.university/"
     degree: "M.Sc."
-    major:
-      Computer Science
-    track:
-      Artificial Intelligence
+    major: "Computer Science"
+    track: "Artificial Intelligence"
+    note: Honourable mention
+    final_work:
+      link:
+        url: "https://constructor.university/research/autonomous-navigation"
+        name: "Autonomous Navigation in Robotics"
+    location: Bremen, Germany
     from: "2018"
     to: "2020"
   - place:
       name: Innopolis University
       link: "https://innopolis.university/en/"
     degree: "B.Sc."
-    major:
-      Data Science
-    track: Technical Leadership
+    major: "Data Science"
+    track: "Technical Leadership"
+    note: President's list
+    final_work:
+      link:
+        name: "Data Optimization Techniques"
+    location: Innopolis, Russia
     from: "2015"
     to: "2018"
 
-hackathons:
-  - hackathon:
+certifications:
+  - venue:
       name: Tech Innovators Hackathon
       link: "https://techinnovatorshackathon.com/"
     certificate_link: "https://techinnovatorshackathon.com/certificates/johndoe"

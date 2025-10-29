@@ -41,9 +41,9 @@
       eval(settings.font.size.education_description),
       font: settings.font.minor_highlight,
   )
-  An experienced *software engineer* with a confident grasp of *infrastructure* and *system design*, now seeking opportunities to excel in the realms of solution architecture.
-
-  Open to roles ranging from *software engineering* to *infrastructure*.
+  #configuration.summary
+  
+  Strong background in infrastructure, migration to cloud, and secure system design.
 
   = Education
 
@@ -52,7 +52,8 @@
         #par[
           #set text(
             size: eval(settings.font.size.heading),
-            font: settings.font.general
+            font: settings.font.general,
+            tracking: -0.01em,
           )
             #{
               if "to" in place and "from" in place [
@@ -72,18 +73,32 @@
           #{
             let description_items = ()
             if "degree" in place and "major" in place [
-              #description_items.push(place.degree + " " + place.major)
-            ]
-            if "track" in place [
-              #description_items.push(place.track + " " + "track")
+              #description_items.push([#place.degree~#place.major | #place.track~track])
             ]
             if "note" in place [
-              #description_items.push(place.note)
+              #description_items.push([#place.note])
+            ]
+            if "final_work" in place [
+              #let thesis_description = place.final_work.at("description", default: none)
+              #if thesis_description != none [
+                #description_items.push([*Thesis:* #thesis_description])
+              ]
+              #if "link" in place.final_work [
+                #let thesis_link = place.final_work.link
+                #let thesis_url = thesis_link.at("url", default: none)
+                #let thesis_name = thesis_link.at("name", default: none)
+                #if thesis_url != none and thesis_name != none [
+                  #description_items.push([#link(thesis_url)[#thesis_name]])
+                ]
+                #if thesis_url == none and thesis_name != none [
+                  #description_items.push([#thesis_name])
+                ]
+            ]
             ]
             if "location" in place [
-              #description_items.push(place.location)
+              #description_items.push([#place.location])
             ]
-            description_items.join("\n")
+            description_items.join(linebreak())
           }
         ]
     ]
@@ -96,10 +111,12 @@
       #par[
         #set text(
           size: eval(settings.font.size.description),
+          tracking: -0.01em,
         )
         #set text(
           // size: eval(settings.font.size.tags),
           font: settings.font.minor_highlight,
+          tracking: -0.01em,
         )
         *#skill.name*
         #linebreak()
@@ -162,10 +179,10 @@
     ]
   }
 
-  = Hackathons
+  = Certifications
 
   #{
-    for hack in configuration.hackathons [
+    for certificate in configuration.certifications [
       #set par(
         justify: true,
         leading: eval(settings.paragraph.leading)
@@ -175,14 +192,14 @@
         size: eval(settings.font.size.description),
         font: settings.font.general
       )
-      - #hack.year #hack.from – #hack.to \
-        #link(hack.hackathon.link)[#hack.hackathon.name] – #link(hack.certificate_link)[Credential]
+      - #certificate.year #certificate.from – #certificate.to \
+        #link(certificate.venue.link)[#certificate.venue.name] – #link(certificate.certificate_link)[Credential]
         
         #set text(
           size: eval(settings.font.size.description),
           font: settings.font.general
         )
-        #hack.description
+        #certificate.description
     ]
   }
 
