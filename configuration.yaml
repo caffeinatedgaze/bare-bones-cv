@@ -117,7 +117,6 @@ education:
     degree: "M.Sc."
     major: "Computer Science"
     track: "Artificial Intelligence"
-    note: Honourable mention
     final_work:
       link:
         url: "https://constructor.university/research/autonomous-navigation"
@@ -131,7 +130,6 @@ education:
     degree: "B.Sc."
     major: "Data Science"
     track: "Technical Leadership"
-    note: President's list
     final_work:
       link:
         name: "Data Optimization Techniques"

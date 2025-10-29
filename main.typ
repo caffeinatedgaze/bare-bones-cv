@@ -41,7 +41,11 @@
       eval(settings.font.size.education_description),
       font: settings.font.minor_highlight,
   )
-  #configuration.summary
+  #{
+    par(justify: true)[
+      #configuration.summary
+    ]
+  }
   
   Strong background in infrastructure, migration to cloud, and secure system design.
 
@@ -49,11 +53,10 @@
 
   #{
     for place in configuration.education [
-        #par[
+        #par(justify: false)[
           #set text(
             size: eval(settings.font.size.heading),
             font: settings.font.general,
-            tracking: -0.01em,
           )
             #{
               if "to" in place and "from" in place [
@@ -65,7 +68,7 @@
             }
             #link(place.place.link)[#place.place.name]
         ]
-        #par[
+        #par(justify: false)[
           #set text(
             eval(settings.font.size.education_description),
             font: settings.font.minor_highlight,
@@ -73,25 +76,18 @@
           #{
             let description_items = ()
             if "degree" in place and "major" in place [
-              #description_items.push([#place.degree~#place.major | #place.track~track])
-            ]
-            if "note" in place [
-              #description_items.push([#place.note])
+              #description_items.push([#place.degree~#place.major #place.track~track])
             ]
             if "final_work" in place [
-              #let thesis_description = place.final_work.at("description", default: none)
-              #if thesis_description != none [
-                #description_items.push([*Thesis:* #thesis_description])
-              ]
               #if "link" in place.final_work [
                 #let thesis_link = place.final_work.link
                 #let thesis_url = thesis_link.at("url", default: none)
                 #let thesis_name = thesis_link.at("name", default: none)
+                // Format thesis text as link, if given. Otherwise, just the name.
                 #if thesis_url != none and thesis_name != none [
-                  #description_items.push([#link(thesis_url)[#thesis_name]])
-                ]
-                #if thesis_url == none and thesis_name != none [
-                  #description_items.push([#thesis_name])
+                  #description_items.push([*Thesis* #link(thesis_url)[#thesis_name]])
+                ] else if thesis_name != none [
+                  #description_items.push([*Thesis* #thesis_name])
                 ]
             ]
             ]
@@ -108,7 +104,7 @@
 
   #{
     for skill in configuration.skills [
-      #par[
+      #par(justify: false)[
         #set text(
           size: eval(settings.font.size.description),
           tracking: -0.01em,
